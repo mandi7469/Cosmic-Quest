@@ -1,0 +1,709 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
+
+:root {
+  --space-blue: #000080;
+  --silver: #c0c0c0;
+  --nebula-pink: #ff1aba;
+  --celestial-purple: #cb00cb;
+  --alien-green: #00dd00;
+  --gray: #404040;
+}
+
+/* styling for videos */
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* styling for font */
+.CQfont {
+  font-family: "Orbitron", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.homeTitle {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px rgb(255, 255, 255);
+  /* font-size: 100px */
+}
+
+/* styling for login form */
+.formText {
+  font-size: 12px;
+}
+
+.formButton {
+  border-radius: 20px;
+  border: 1px solid #000000;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:focus {
+  outline: none;
+}
+
+button.ghost {
+  background-color: transparent;
+  border-color: #ffffff;
+}
+
+.formBox {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
+}
+
+.inputField {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 480px;
+}
+
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.sign-in-container {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.container.right-panel-active .sign-in-container {
+  transform: translateX(100%);
+}
+
+.sign-up-container {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.container.right-panel-active .sign-up-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: show 0.6s;
+}
+
+@keyframes show {
+  0%,
+  49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.container.right-panel-active .overlay-container {
+  transform: translateX(-100%);
+}
+
+.overlay {
+  background: #cb00cb;
+  background: -webkit-linear-gradient(to right, #cb00cb, #00dd00);
+  background: linear-gradient(to right, #cb00cb, #00dd00);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  color: #ffffff;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.container.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+
+.overlay-panel {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.overlay-left {
+  transform: translateX(-20%);
+}
+
+.container.right-panel-active .overlay-left {
+  transform: translateX(0);
+}
+
+.overlay-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-right {
+  transform: translateX(20%);
+}
+
+.social-container {
+  margin: 20px 0;
+}
+
+.social-container a {
+  border: 1px solid #dddddd;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  height: 40px;
+  width: 40px;
+}
+
+/* styling for section page */
+.selectionTitle {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px rgb(255, 255, 255);
+  /* font-size: 100px */
+}
+
+/* styling for error page */
+.errorTitle {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px rgb(255, 255, 255);
+  /* font-size: 100px */
+}
+
+.errorMessage {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
+
+/* ------------------------ Game Page CSS -------------------------------*/
+
+html, body {
+  height: 100%;
+  margin: 0;
+  /* overflow: hidden;  */
+  /* Prevents scrolling, ensuring video fills the viewport */
+}
+
+.game-container {
+  position: relative;
+  /* height: 100vh;  */
+  /* Ensures the container fills the viewport height */
+  color: rgb(219, 213, 213);
+  
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content vertically */
+}
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  /* Ensures the video covers the entire container */
+  z-index: -1; /* Ensures the video stays behind the content */
+}
+
+/* Default CSS for Event Text */
+/* .content-container {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  /* Ensures content appears above the video */
+/* } */
+
+/* .event-text {
+  margin-bottom: 30px;
+} */
+
+
+/* ----------------------- EVENT TEXT CSS ---------------------------- */
+.event-text {
+  margin: 0; /* Removes default margin */
+  padding: 1rem; /* Adds padding inside the text element */
+  font-size: 1.2rem; /* Adjust font size for readability */
+  line-height: 1.5; /* Increases line height for better readability */
+  color: #ffffffd3; /* Sets text color to white for contrast */
+  background: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent background for readability */
+  border-radius: 0.5rem; /* Rounds the corners of the text background */
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5); /* Adds shadow for better visual separation */
+  text-align: justify; /* Left-aligns the text */
+  max-width: 90%; /* Ensures the text block is responsive and doesn’t overflow */
+  width: auto; /* Ensures the text block width is flexible */
+  box-sizing: border-box; /* Ensures padding and border are included in the element’s total width and height */
+}
+
+/* Media Queries for additional responsiveness */
+@media (max-width: 768px) {
+  .event-text {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+    padding: 0.75rem; /* Adjust padding for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .event-text {
+    font-size: 0.9rem; /* Further adjust font size for very small screens */
+    padding: 0.5rem; /* Further adjust padding for very small screens */
+  }
+}
+
+
+/* Default Choice Button CSS: */
+/* .choices-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.choice-button {
+  background-color: var(--nebula-pink);
+  color: black;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 5px 0;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.choice-button:hover {
+  background-color: var(--celestial-purple);
+}
+
+.choice-button:active {
+  transform: scale(0.95);
+} */
+
+.audio-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* --------------------- CHOICE OPTION BUTTONS CSS --------------------*/
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 90deg;
+  inherits: true;
+}
+
+:root {
+  --d: 2500ms;
+  --c1: rgba(168, 239, 255, 1);
+  --c2: rgba(168, 239, 255, 0.1);
+}
+
+.choices-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.choice-button-wrapper {
+  margin: 0.5rem; /* Adjusted for better spacing */
+}
+
+.choice-button {
+  font-size: 1rem; /* Adjust size as needed */
+  padding: 0.75rem 1.5rem; /* Adjust padding for better sizing */
+  border: 0.35rem solid transparent; /* Make the border transparent initially */
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.336);
+  color: #ffffffd3; /* Sets text color to white for contrast */
+  ;
+  font-weight: 700;
+  /* text-transform: uppercase; */
+  cursor: pointer;
+  position: relative; /* Needed for the pseudo-element */
+  overflow: hidden; /* Ensure the pseudo-element does not overflow */
+  display: inline-block; /* Ensure the button dimensions are respected */
+}
+
+.choice-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: 0.35rem solid;
+  border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 1;
+  animation: borderRotate var(--d) linear infinite forwards;
+  pointer-events: none; /* Ensures this element does not interfere with button clicks */
+  z-index: 0; /* Ensure it appears behind the button content */
+  box-sizing: border-box; /* Ensure it accounts for padding and border width */
+}
+
+.choice-button:hover {
+  background-color: rgba(63, 63, 63, 0.26);
+  border-color: transparent; /* Hide the border of the button */
+}
+
+.choice-button:active {
+  transform: scale(0.95);
+}
+
+@keyframes borderRotate {
+  100% {
+    --angle: 420deg;
+  }
+}
+
+
+
+
+/* ------------------------------ NAV BAR CSS ------------------------------- */
+.nav-btn {
+  position: relative;
+  display: inline-block;
+  border: none;
+  border-radius: 50px;
+  background: none;
+  padding: 15px 55px;
+  margin: 30px;
+}
+
+.nav-btn a {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3); /* Semi-transparent background for blending */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(0, 0, 0, 0.1); /* Darker border for contrast */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Darker border for contrast */
+  border-radius: 30px;
+  color: #fff;
+  z-index: 1;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-decoration: none;
+  overflow: hidden;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;  
+  backdrop-filter: blur(15px); /* Adds a blur effect behind the button */
+}
+
+.nav-btn:hover a {
+  letter-spacing: 3px;
+}
+
+.nav-btn a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.2), transparent); /* Subtle gradient effect */
+  transform: skewX(40deg) translateX(0);
+  transition: all 0.5s ease-out;
+}
+
+.nav-btn:hover a::before {
+  transform: skewX(40deg) translateX(200%);
+}
+
+.nav-btn::before,
+.nav-btn::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 10px;
+  border-radius: 10px;
+  background: #f00;
+  transition: all 0.4s ease-in-out;
+}
+
+.nav-btn::before {  
+  bottom: -5px;
+}
+
+.nav-btn::after {
+  top: -5px;
+}
+
+.nav-btn:hover::before,
+.nav-btn:hover::after {  
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+  transition-delay: 0.3s;
+}
+
+.nav-btn:hover::before {
+  bottom: 0;
+}
+
+.nav-btn:hover::after {
+  top: 0;
+}
+
+/* Button styles with fire-inspired gradients */
+
+.nav-btn:nth-child(1)::before,
+.nav-btn:nth-child(1)::after {
+  background: linear-gradient(to right, #FF4500, #FF6347); /* Fiery orange-red gradient */
+  box-shadow: 0 0 5px #FF4500, 0 0 15px #FF4500, 0 0 30px #FF4500, 0 0 60px #FF4500;
+}
+
+.nav-btn:nth-child(2)::before,
+.nav-btn:nth-child(2)::after {
+  background: linear-gradient(to right, #FF8C00, #FFD700); /* Intense orange to yellow gradient */
+  box-shadow: 0 0 5px #FF8C00, 0 0 15px #FF8C00, 0 0 30px #FF8C00, 0 0 60px #FF8C00;
+}
+
+.nav-btn:nth-child(3)::before,
+.nav-btn:nth-child(3)::after {
+  background: linear-gradient(to right, #FF5722, #FFC107); /* Deep orange to bright yellow gradient */
+  box-shadow: 0 0 5px #FF5722, 0 0 15px #FF5722, 0 0 30px #FF5722, 0 0 60px #FF5722;
+}
+
+.nav-btn:nth-child(4)::before,
+.nav-btn:nth-child(4)::after {
+  background: linear-gradient(to right, #BF360C, #FFEB3B); /* Dark red to bright yellow gradient */
+  box-shadow: 0 0 5px #BF360C, 0 0 15px #BF360C, 0 0 30px #BF360C, 0 0 60px #BF360C;
+}
+
+/* -------------------------IMAGE STYLING -------------------------*/
+
+
+/* Default CSS for Image: */
+/* .image-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.event-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+} */
+
+/* The Transition Rotation on Image CSS: */
+.event-image {
+  transform-style: preserve-3d;
+  background-position: center center;
+  transition: all 0.5s ease-in-out;
+  border-radius: 10px;
+  position: relative;
+}
+
+.event-image:hover {
+  background-position: 80% 20%;
+  transform: rotate3d(0.5, 1, 0, 30deg);
+}
+
+@media (max-width: 768px) {
+  .event-image {
+    border-radius: 8px; /* Slightly smaller border-radius on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .event-image {
+    border-radius: 5px; /* Even smaller border-radius on very small screens */
+  }
+}
+/* Responsive on all devices: */
+.content-container {
+  overflow: hidden; /* Prevents overflow within this container */
+  position: relative;
+  z-index: 1; /* Ensures content appears above other layers */
+  max-width: 100%; /* Makes sure the container doesn't exceed the viewport width */
+}
+
+
+/* Attempted to add Glow border to the Image */
+/* 
+.event-image::before {
+content: '';
+position: absolute;
+inset: 0;
+background: repeating-conic-gradient(from var(--a), #0f0,#ff0,#0ff,#f0f,#0ff);
+border-radius: 20px;
+animation: rotating 4s linear infinite;
+}
+
+.event-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-conic-gradient(from var(--a), #0f0,#ff0,#0ff,#f0f,#0ff);
+  border-radius: 20px;
+  animation: rotating 4s linear infinite;
+  filter: blur(40px);
+  opacity: 0.75;
+  }
+
+  .event-image span {
+    position: absolute;
+    inset: 4px;
+    background: #222;
+    border-radius: 16px;
+    z-index: 1;
+  }
+
+@property --a {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes rotating {
+  0% {
+    --a: 0deg;
+  }
+  100% {
+    --a: 360deg;
+  }
+} */
+
+
+/* ------------------------ CQ INTRO VIDEO PROMPT FOR SELECTION PAGE ---------------------- */
+.video-prompt {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.8); /* Dark background with opacity */
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+.video-prompt-content {
+  position: relative;
+  width: 80%;
+  max-width: 800px; /* Adjust max-width as needed */
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.video-prompt-close {
+  position: absolute;
+  top: -10px; /* Move it out of the video area */
+  right: -10px; /* Move it out of the video area */
+  width: 40px; /* Increase size */
+  height: 40px; /* Increase size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff; /* White background for contrast */
+  border-radius: 50%; /* Round shape */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Add shadow for better visibility */
+  font-size: 24px; /* Increase size */
+  color: #333; /* Dark color */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.video-prompt-close:hover {
+  background-color: #ff0000; /* Red background on hover */
+  color: #fff; /* White text on hover */
+}
+
+iframe {
+  width: 100%;
+  height: 450px; /* Adjust height as needed */
+  border: none;
+  border-radius: 10px;
+}
